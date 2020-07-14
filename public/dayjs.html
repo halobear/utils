@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>kuan-dayjs</title>
+    <style>
+      body {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      h2 {
+        text-align: center;
+      }
+      .content {
+        border-radius: 3px;
+        padding: 10px;
+        min-height: 200px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>kuan-dayjs</h2>
+    <div class="res">
+      <p>
+        <button onclick="printDate()" class="set-btn">打印当前时间</button>
+        <button onclick="getCurrent()" class="set-btn">获取当前时间</button>
+      </p>
+    </div>
+  </body>
+  <script>
+    const dayjs = window["kuan-dayjs"];
+
+    function printDate() {
+      console.log(dayjs.toDate("2018-10-10"));
+    }
+
+    function getCurrent() {
+      const a = dayjs.format();
+      alert(a);
+    }
+  </script>
+</html>

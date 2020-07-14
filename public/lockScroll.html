@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>kuan-lockScroll</title>
+    <style>
+      body {
+        max-width: 600px;
+        margin: 0 auto;
+        height: 300vh;
+      }
+      h2 {
+        text-align: center;
+      }
+      .content {
+        border-radius: 3px;
+        padding: 10px;
+        min-height: 200px;
+        font-size: 20px;
+      }
+      p {
+        position: fixed;
+        width: 300px;
+        left: 0;
+        top: 300px;
+        right: 0;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>kuan-lockScroll</h2>
+    <div class="res">
+      <p>
+        <button onclick="lock()" class="set-btn">锁定滚动</button>
+        <button onclick="cancel()" class="set-btn">取消锁定</button>
+      </p>
+    </div>
+  </body>
+  <script>
+    const lockScroll = window["kuan-lockScroll"];
+
+    function lock() {
+      lockScroll(true);
+    }
+
+    function cancel() {
+      lockScroll(false);
+    }
+  </script>
+</html>

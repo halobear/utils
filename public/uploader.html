@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>kuan-uploader</title>
+    <style>
+      body {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      h2 {
+        text-align: center;
+      }
+      .content {
+        border-radius: 3px;
+        padding: 10px;
+        min-height: 200px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>kuan-uploader</h2>
+    <div class="res">
+      <p>
+        getFileMD5, getFiles, getFile, upload
+      </p>
+      <p>
+        <button onclick="getFiles()" class="set-btn">选择多个文件</button>
+        <button onclick="getFile()" class="set-btn">选择单个文件</button>
+      </p>
+    </div>
+  </body>
+  <script>
+    const uploader = window["kuan-uploader"];
+
+    async function getFiles() {
+      const res = await uploader.getFiles();
+      console.log(res);
+    }
+    async function getFile() {
+      const res = await uploader.getFile();
+      if (!res) return;
+      const f = new FormData();
+      f.append("file", res.file);
+      uploader.upload({
+        url: "/api/test",
+        method: "post",
+        data: f
+      });
+    }
+  </script>
+</html>

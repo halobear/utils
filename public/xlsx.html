@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>kuan-xlsx</title>
+    <style>
+      body {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      h2 {
+        text-align: center;
+      }
+      .content {
+        border-radius: 3px;
+        padding: 10px;
+        min-height: 200px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>kuan-xlsx</h2>
+    <div class="res">
+      <p>
+        <button onclick="test()">导出excel</button>
+      </p>
+    </div>
+  </body>
+  <script>
+    const xlsx = window["kuan-xlsx"];
+
+    const data = {
+      name: "test",
+      data: [{ a: 1, b: 2 }],
+      header: { a: "A", b: "B" },
+      skipHeader: true
+    };
+
+    function test() {
+      xlsx.JSONToExcel(data);
+    }
+  </script>
+</html>

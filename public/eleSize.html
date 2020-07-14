@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>kuan-eleSize</title>
+    <style>
+      body {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      h2 {
+        text-align: center;
+      }
+      .content {
+        border-radius: 3px;
+        padding: 10px;
+        min-height: 200px;
+        font-size: 20px;
+      }
+      .ele-outer {
+        border: 1px solid red;
+        height: 300px;
+        width: 300px;
+      }
+      .ele-inner {
+        width: 100%;
+        height: 100%;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>kuan-eleSize</h2>
+    <div class="res">
+      <p>
+        <button onclick="test()" class="set-btn">获取隐藏元素尺寸</button>
+      </p>
+      <div class="ele-outer">
+        框内部有一个隐藏元素
+        <div style="width: 100px" class="ele-inner"></div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const eleSize = window["kuan-eleSize"];
+
+    function test() {
+      const size = eleSize(document.querySelector(".ele-inner"));
+      alert(JSON.stringify(size));
+    }
+  </script>
+</html>

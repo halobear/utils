@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>kuan-fullScreen</title>
+    <style>
+      body {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      h2 {
+        text-align: center;
+      }
+      .content {
+        border-radius: 3px;
+        padding: 10px;
+        min-height: 200px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>kuan-fullScreen</h2>
+    <div class="res">
+      <p>
+        <button onclick="test()" class="set-btn">切换全屏</button>
+      </p>
+    </div>
+  </body>
+  <script>
+    const fullScreen = window["kuan-fullScreen"];
+
+    function test() {
+      fullScreen.toggle();
+    }
+  </script>
+</html>

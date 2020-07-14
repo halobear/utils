@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>kuan-color</title>
+    <style>
+      body {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      h2 {
+        text-align: center;
+      }
+      .content {
+        border-radius: 3px;
+        padding: 10px;
+        min-height: 200px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>kuan-color</h2>
+    <div class="res">
+      <p>
+        <input class="rgb" value="1,2,3" readonly type="text" />
+        <button onclick="rgb2hex()">转化</button>
+      </p>
+      <p>
+        <input class="hex" value="#f00" readonly type="text" />
+        <button onclick="hex2rgb()">转化</button>
+      </p>
+    </div>
+  </body>
+  <script>
+    const color = window["kuan-color"];
+
+    function rgb2hex() {
+      const value = document.querySelector(".rgb").value;
+      alert(color.rgb2hex(value.split(",")));
+    }
+
+    function hex2rgb() {
+      const value = document.querySelector(".hex").value;
+      alert(color.hex2rgb(value));
+    }
+  </script>
+</html>
