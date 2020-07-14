@@ -18,7 +18,8 @@ module.exports = merge(baseConfig, {
   plugins: [
     new CopyPlugin({
       patterns: [
-        { from: 'types', to: 'types' },
+        { from: 'types', to: '.' },
+        { from: 'src', to: 'src' },
         { from: 'package.json', to: 'package.json' },
       ],
     }),
