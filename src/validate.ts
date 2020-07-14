@@ -31,7 +31,7 @@ export const isPc = !/Android|webOS|iPhone|iPod|BlackBerry/i.test(userAgent)
  * @return {Boolean}
  */
 export function isPhone(str: string) {
-  return /^(0|86|17951)?1[3456789]\d{9}$/.test(str)
+  return /^(0|86|17951)?1\d{10}$/.test(str)
 }
 
 /**
@@ -71,9 +71,7 @@ export function isIdCard(str: string) {
  */
 export function isUrl(str: string) {
   // eslint-disable-next-line
-  return /[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/i.test(
-    str
-  )
+  return /[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/i.test(str)
 }
 
 /**
@@ -88,17 +86,4 @@ export function isImage(url: string) {
   const str = suffix.substr(0, suffix.indexOf('?'))
 
   return /png|gif|svg|jpg|icon|jpeg]/i.test(str)
-}
-
-export default {
-  isIOS,
-  isWx,
-  isAliPay,
-  isPc,
-  isPhone,
-  isEmail,
-  isNum,
-  isIdCard,
-  isUrl,
-  isImage,
 }
