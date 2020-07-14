@@ -15,3 +15,10 @@ npm i @halobear/utils -S
 ```js
 import throttle from '@halobear/utils//throttle'
 ```
+
+## 发布
+
+```bash
+cd lib
+npm publish --access public
+```
