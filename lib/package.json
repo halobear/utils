@@ -1,6 +1,6 @@
 {
   "name": "@halobear/utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "[简陋文档](https://www.kuan1.top/kuan-utils)",
   "main": "utils.js",
   "scripts": {
@@ -15,6 +15,7 @@
   "keywords": [
     "utils"
   ],
+  "types": "types",
   "files": [
     "lib",
     "src",
@@ -22,7 +23,6 @@
     "*.js",
     "*.d.ts"
   ],
-  "types": "types",
   "author": "luzhongk@126.com",
   "gitHooks": {
     "commit-msg": "node verifyCommitMsg.js"
