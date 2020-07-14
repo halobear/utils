@@ -13,6 +13,5 @@ npm i @halobear/utils -S
 ```
 
 ```js
-import { throttle } from 'kuan-utils'
-import throttle from 'kuan-utils/lib/throttle'
+import throttle from '@halobear/utils//throttle'
 ```

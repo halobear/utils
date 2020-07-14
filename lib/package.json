@@ -2,7 +2,7 @@
   "name": "@halobear/utils",
   "version": "1.0.0",
   "description": "[简陋文档](https://www.kuan1.top/kuan-utils)",
-  "main": "lib/utils.js",
+  "main": "utils.js",
   "scripts": {
     "dev": "webpack-dev-server --config build/webpack.config.dev.js",
     "build": "webpack --config build/webpack.config.prod.js",
