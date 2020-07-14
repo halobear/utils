@@ -16,6 +16,13 @@
     "utils"
   ],
   "types": "types",
+  "files": [
+    "lib",
+    "src",
+    "types",
+    "*.js",
+    "*.d.ts"
+  ],
   "author": "luzhongk@126.com",
   "gitHooks": {
     "commit-msg": "node verifyCommitMsg.js"

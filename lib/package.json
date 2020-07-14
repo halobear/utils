@@ -15,6 +15,13 @@
   "keywords": [
     "utils"
   ],
+  "files": [
+    "lib",
+    "src",
+    "types",
+    "*.js",
+    "*.d.ts"
+  ],
   "types": "types",
   "author": "luzhongk@126.com",
   "gitHooks": {
