@@ -15,11 +15,6 @@
   "keywords": [
     "utils"
   ],
-  "files": [
-    "lib",
-    "src",
-    "types"
-  ],
   "types": "types",
   "author": "luzhongk@126.com",
   "gitHooks": {

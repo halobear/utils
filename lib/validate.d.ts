@@ -43,3 +43,16 @@ export declare function isUrl(str: string): boolean;
  * @returns {boolean}
  */
 export declare function isImage(url: string): boolean;
+declare const _default: {
+    isIOS: boolean;
+    isWx: boolean;
+    isAliPay: boolean;
+    isPc: boolean;
+    isPhone: typeof isPhone;
+    isEmail: typeof isEmail;
+    isNum: typeof isNum;
+    isIdCard: typeof isIdCard;
+    isUrl: typeof isUrl;
+    isImage: typeof isImage;
+};
+export default _default;
