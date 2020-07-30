@@ -1,6 +1,6 @@
 {
   "name": "@halobear/utils",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": true,
   "description": "[简陋文档](https://www.kuan1.top/kuan-utils)",
   "main": "lib/utils.js",

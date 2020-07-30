@@ -27,5 +27,4 @@ module.exports = merge(baseConfig, {
   externals: {
     axios: 'axios',
   },
-  mode: 'production',
 })
