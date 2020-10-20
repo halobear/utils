@@ -11,10 +11,6 @@
     "publish:npm": "node scripts/prepublish.js && cd lib && npm publish --access public && cd -",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "files": [
-    "lib",
-    "src"
-  ],
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.1",
     "@rollup/plugin-commonjs": "^14.0.0",
