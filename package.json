@@ -1,6 +1,6 @@
 {
   "name": "@halobear/utils",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "[简陋文档](https://www.kuan1.top/kuan-utils)",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
