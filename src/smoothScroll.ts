@@ -1,5 +1,4 @@
-import aniFrame from "./animationFrame";
-const { requestAnimationFrame } = aniFrame;
+import { requestAnimationFrame } from "./animationFrame";
 
 /**
  * 动画轨迹

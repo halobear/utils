@@ -5,7 +5,7 @@
  */
 
 let timer: any;
-export function debounce(fn: Function, time: number = 300) {
+function debounce(fn: Function, time: number = 300) {
   if (typeof fn !== "function") {
     throw new Error("必须传入一个函数作为参数");
   }

@@ -1,8 +1,6 @@
 interface Obj {
-  [key: string]: string;
+  [key: string]: string
 }
-
-type K = keyof Obj;
 
 /**
  *
@@ -10,14 +8,11 @@ type K = keyof Obj;
  * @param search {string}  [a=1&b=2]
  * @returns {string || null}
  */
-export function get(
-  name: string,
-  search: string = window.location.href.split("?")[1]
-) {
-  const reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-  const r = (search || "").match(reg);
-  if (r != null) return decodeURIComponent(r[2]); // unescape （w3c推荐使用decodeURI() 和 decodeURIComponent()）
-  return null;
+function get(name: string, search: string = window.location.href.split('?')[1]) {
+  const reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)')
+  const r = (search || '').match(reg)
+  if (r != null) return decodeURIComponent(r[2]) // unescape （w3c推荐使用decodeURI() 和 decodeURIComponent()）
+  return null
 }
 
 /**
@@ -25,15 +20,15 @@ export function get(
  * @param  {String} search  default: window.location.href
  * @return {Object}
  */
-export function parse(search = window.location.href.split("?")[1]) {
-  if (!search) return {};
+function parse(search = window.location.href.split('?')[1]) {
+  if (!search) return {}
   return decodeURIComponent(search)
-    .split("&")
+    .split('&')
     .reduce((obj: Obj, item) => {
-      const [key = "", value = ""] = item.split("=");
-      obj[key] = value;
-      return obj;
-    }, {});
+      const [key = '', value = ''] = item.split('=')
+      obj[key] = value
+      return obj
+    }, {})
 }
 
 /**
@@ -41,29 +36,29 @@ export function parse(search = window.location.href.split("?")[1]) {
  * @param  {Object} obj
  * @return {String}
  */
-export function stringify(obj: Obj) {
-  if (!obj) return "";
-  const pairs = [];
+function stringify(obj: Obj) {
+  if (!obj) return ''
+  const pairs = []
 
   for (const key in obj) {
-    const value: any = obj[key];
+    const value: any = obj[key]
 
     if (value instanceof Array) {
       for (let i = 0; i < value.length; ++i) {
-        const arrStr = `${key}[${i}]=${encodeURIComponent(value[i])}`;
-        pairs.push(arrStr);
+        const arrStr = `${key}[${i}]=${encodeURIComponent(value[i])}`
+        pairs.push(arrStr)
       }
-      continue;
+      continue
     }
 
-    pairs.push(`${encodeURIComponent(key)}=${encodeURIComponent(obj[key])}`);
+    pairs.push(`${encodeURIComponent(key)}=${encodeURIComponent(obj[key])}`)
   }
 
-  return pairs.join("&");
+  return pairs.join('&')
 }
 
 export default {
   get,
   parse,
-  stringify
-};
+  stringify,
+}

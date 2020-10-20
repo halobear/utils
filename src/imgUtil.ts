@@ -2,7 +2,7 @@
  * 预加载图片
  * @params {array} images 图片地址
  */
-function preload(srcArr: string[] = []): Promise<string[]> {
+export function preloadImage(srcArr: string[] = []): Promise<string[]> {
   return new Promise(resolve => {
     const images = Array.from(new Set(srcArr));
     const loaded: string[] = [];
@@ -26,7 +26,7 @@ function preload(srcArr: string[] = []): Promise<string[]> {
  * @param {File} file
  * @return: Promise<{widh: string, height: string}>
  */
-function fileInfo(
+export function getFileImageSize(
   file: File
 ): Promise<{ width: number; height: number } | null> {
   return new Promise(resolve => {
@@ -49,7 +49,3 @@ function fileInfo(
   });
 }
 
-export default {
-  preload,
-  fileInfo
-};

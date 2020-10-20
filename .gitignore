@@ -18,7 +18,6 @@ yarn-error.log*
 *.ntvs*
 *.njsproj
 *.sln
-*.sw*
-yarn.lock
+*.sw?
 
-
+lib

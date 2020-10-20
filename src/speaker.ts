@@ -6,14 +6,14 @@ let speaker: any;
 const win = window as SpWin;
 
 // 停止语音
-export function stop() {
+function stop() {
   if (win.speechSynthesis) {
     win.speechSynthesis.cancel();
   }
 }
 
 // 播放语音
-export function speak(text: string) {
+function speak(text: string) {
   stop();
   if (!speaker && win.SpeechSynthesisUtterance) {
     speaker = new win.SpeechSynthesisUtterance();
@@ -25,7 +25,7 @@ export function speak(text: string) {
 }
 
 // 监听语音结束
-export function onend(callback: Function = () => {}) {
+function onend(callback: Function = () => {}) {
   if (!speaker && win.SpeechSynthesisUtterance) {
     speaker = new win.SpeechSynthesisUtterance();
   }

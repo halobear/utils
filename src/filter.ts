@@ -85,12 +85,3 @@ export function remainTime(endTime: Date | string) {
   }
   return d + "天 " + h + "小时 " + m + "分钟 " + s + "秒";
 }
-
-export default {
-  hidePhone,
-  byteSize,
-  htmlEncode,
-  formatCurrency,
-  timeAgo,
-  remainTime
-};

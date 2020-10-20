@@ -88,15 +88,3 @@ export function isImage(url: string) {
   return /png|gif|svg|jpg|icon|jpeg]/i.test(str)
 }
 
-export default {
-  isIOS,
-  isWx,
-  isAliPay,
-  isPc,
-  isPhone,
-  isEmail,
-  isNum,
-  isIdCard,
-  isUrl,
-  isImage,
-}

@@ -55,10 +55,3 @@ export function downloadImage(src: string, name = `${Date.now()}.png`) {
     }
   };
 }
-
-export default {
-  download,
-  downloadBlob,
-  downloadStr,
-  downloadImage
-};

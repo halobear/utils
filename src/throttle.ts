@@ -5,7 +5,7 @@ let timer: number;
  * @param {fn} Function
  * @param {time} Number 截流时间
  */
-export function throttle(fn: Function, time = 300) {
+function throttle(fn: Function, time = 300) {
   if (typeof fn !== "function") {
     throw new Error("必须传入一个函数作为参数");
   }

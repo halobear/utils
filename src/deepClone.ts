@@ -10,7 +10,7 @@ function setValue(obj: Obj, k: K, v: any) {
  * @desc 深拷贝，支持常见类型
  * @param {any} values
  */
-export function deepClone(values: any): any {
+function deepClone(values: any): any {
   let copy;
 
   if (values === null || typeof values !== "object") return values;

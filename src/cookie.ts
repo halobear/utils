@@ -4,14 +4,14 @@
  * @return {String} cookie
  */
 function getCookie(name: string) {
-  const arr = document.cookie.replace(/\s/g, "").split(";");
+  const arr = document.cookie.replace(/\s/g, '').split(';')
   for (let i = 0; i < arr.length; i++) {
-    const tempArr = arr[i].split("=");
+    const tempArr = arr[i].split('=')
     if (tempArr[0] === name) {
-      return decodeURIComponent(tempArr[1]);
+      return decodeURIComponent(tempArr[1])
     }
   }
-  return "";
+  return ''
 }
 
 /**
@@ -20,10 +20,10 @@ function getCookie(name: string) {
  * @param {String} value
  * @param {Number} days
  */
-function setCookie(name: string, value: string | number, days = 1) {
-  const date = new Date();
-  date.setDate(date.getDate() + days);
-  document.cookie = name + "=" + value + ";expires=" + date;
+function setCookie(name: string, value: string | number, days = 1, path = '/') {
+  const date = new Date()
+  date.setDate(date.getDate() + days)
+  document.cookie = `${name}=${value};expires=${date};path=${path}`
 }
 
 /**
@@ -32,11 +32,12 @@ function setCookie(name: string, value: string | number, days = 1) {
  */
 function removeCookie(name: string) {
   // 设置已过期，系统会立刻删除cookie
-  setCookie(name, "", -1);
+  setCookie(name, '', -1)
 }
 
 export default {
   get: getCookie,
   set: setCookie,
-  remove: removeCookie
-};
+  remove: removeCookie,
+}
+

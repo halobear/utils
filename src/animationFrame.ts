@@ -23,7 +23,3 @@ export const cancelAnimationFrame = (win.cancelAnimationFrame =
   win.oCancelAnimationFrame ||
   (id => clearTimeout(id)));
 
-export default {
-  requestAnimationFrame,
-  cancelAnimationFrame
-};

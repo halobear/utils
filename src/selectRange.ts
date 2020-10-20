@@ -1,3 +1,7 @@
+/**
+ * https://github.com/ovenslove/vue-mdEditor/blob/master/static/js/rangeFn.js
+ */
+
 interface Doc extends Document {
   selection?: {
     createRange: () => any;
@@ -149,15 +153,3 @@ export function insertAfterText(textDom: InputEle, value: string) {
     textDom.focus();
   }
 }
-
-export default {
-  getCursortPosition,
-  setCursorPosition,
-  getSelectText,
-  setSelectText,
-  insertAfterText
-};
-
-/**
- * https://github.com/ovenslove/vue-mdEditor/blob/master/static/js/rangeFn.js
- */

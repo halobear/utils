@@ -96,8 +96,3 @@ export const excelToJSON = async (file: File) => {
     reader.readAsBinaryString(file)
   })
 }
-
-export default {
-  JSONToExcel,
-  excelToJSON,
-}

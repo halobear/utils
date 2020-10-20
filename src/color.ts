@@ -2,7 +2,7 @@
  * @desc 随机生成颜色
  * @return {String}
  */
-function random(): string {
+export function random(): string {
   return (
     "#" + ("00000" + ((Math.random() * 0x1000000) << 0).toString(16)).slice(-6)
   );
@@ -14,7 +14,7 @@ function random(): string {
  * @param {Number} b
  * @return {string} hex
  */
-function rgb2hex(r: number, g: number, b: number): string {
+export function rgb2hex(r: number, g: number, b: number): string {
   const rgb = b | (g << 8) | (r << 16);
   return "#" + (0x1000000 + rgb).toString(16).slice(1);
 }
@@ -25,7 +25,7 @@ function rgb2hex(r: number, g: number, b: number): string {
  * @return {string} rgb
  */
 
-function hex2rgb(hex: string): string {
+export function hex2rgb(hex: string): string {
   if (!/^#?([0-9a-fA-F]{3}|[#-9a-fA-F]{6})$/.test(hex)) return "";
   let str = hex.replace("#", "");
   if (str.length === 3) {
@@ -42,8 +42,3 @@ function hex2rgb(hex: string): string {
   return r + "," + g + "," + b;
 }
 
-export default {
-  random,
-  rgb2hex,
-  hex2rgb
-};

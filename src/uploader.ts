@@ -238,10 +238,3 @@ export function upload({
     xhr.send(data as FormData);
   });
 }
-
-export default {
-  getFileMD5,
-  getFiles,
-  getFile,
-  upload
-};
