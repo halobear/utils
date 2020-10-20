@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>haloCookie</title>
+    <style>
+      body {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      h2 {
+        text-align: center;
+      }
+      .content {
+        border-radius: 3px;
+        padding: 10px;
+        min-height: 200px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>haloCookie</h2>
+    <div class="res">
+      <p>
+        <input type="text" />
+        <button onclick="setCookie()" class="set-btn">设置token</button>
+        <button onclick="getCookie()" class="get-btn">获取cookie</button>
+        <button onclick="removeCookie()" class="remove-btn">清空cookie</button>
+      </p>
+    </div>
+  </body>
+  <script>
+    const cookie = window["haloCookie"];
+    console.log(cookie);
+
+    const input = document.querySelector("input");
+
+    const key = "test-key";
+    function setCookie() {
+      console.log("set", key, input.value);
+      cookie.set(key, input.value);
+    }
+    function getCookie() {
+      console.log("get");
+      const c = cookie.get(key);
+      alert(c);
+    }
+    function removeCookie() {
+      console.log("remove");
+      cookie.remove();
+    }
+  </script>
+</html>

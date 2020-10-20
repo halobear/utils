@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>haloFilter</title>
+    <style>
+      body {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      h2 {
+        text-align: center;
+      }
+      .content {
+        border-radius: 3px;
+        padding: 10px;
+        min-height: 200px;
+        font-size: 20px;
+      }
+      p {
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>haloFilter</h2>
+    <div class="contnet">
+      <ul>
+        <li>
+          <span>当前文件大小(byteSize)：</span>
+          <p id="byte"></p>
+        </li>
+        <li>
+          <span>格式化货币(formatCurrency)：</span>
+          <p id="currency"></p>
+        </li>
+        <li>
+          <span>2010是(timeAgo)：</span>
+          <p id="ago"></p>
+        </li>
+        <li>
+          <span>3001剩余时间(remainTime)</span>
+          <p id="remain"></p>
+        </li>
+        <li>
+          <span>当前文件html(htmlEncode):</span>
+          <p id="code"></p>
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    const filter = window["haloFilter"];
+    document.querySelector("#byte").textContent = filter.byteSize(
+      document.body.innerHTML
+    );
+    document.querySelector("#code").innerHTML = filter.htmlEncode(
+      document.body.innerHTML
+    );
+    document.querySelector("#currency").innerHTML = filter.formatCurrency(
+      1000000.01
+    );
+    document.querySelector("#ago").innerHTML = filter.timeAgo("2010-01-01");
+    document.querySelector("#remain").innerHTML = filter.remainTime(
+      "3001-01-01"
+    );
+  </script>
+</html>

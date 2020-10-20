@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>haloLoadMore</title>
+    <style>
+      body::-webkit-scrollbar {
+        width: 20px;
+        background-color: #eee;
+      }
+      body::-webkit-scrollbar-thumb {
+        background-color: red;
+      }
+      body {
+        background-color: #f5f5f5;
+      }
+      body div {
+        height: 200vh;
+        width: 60%;
+        margin: 0 auto;
+        background: #690;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 0),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.3) 1px, transparent 0);
+        background-size: 15px 15px, 15px 15px;
+      }
+      span {
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>haloLoadMore</h2>
+    <span></span>
+    <div></div>
+  </body>
+  <script>
+    const LoadMore = window['haloLoadMore']
+    var i = 200
+    new LoadMore(() => {
+      console.log('加载更多。。。')
+      i += 200
+      document.querySelector('div').style.height = i + 'vh'
+    })
+  </script>
+</html>

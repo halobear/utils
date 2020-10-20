@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>haloPreventTouchScroll 移动端阻止弹窗滚动</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 200vh;
+      }
+      .outer {
+        width: 300px;
+        height: 300px;
+        overflow-y: auto;
+        margin: 0 auto;
+        background-color: #f5f5f5;
+        padding: 10px;
+        margin-top: 100px;
+      }
+      .inner {
+        height: 300vh;
+        background: linear-gradient(red 30px, rgba(0, 0, 0, 0.5) 31px) repeat top center/100% 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>haloPreventTouchScroll 移动端阻止弹窗滚动</h2>
+    <button class="cancel">取消锁定</button>
+    <div class="outer">
+      <div class="inner"></div>
+    </div>
+  </body>
+  <script>
+    const preventScroll = window['haloPreventTouchScroll']
+    let cancel = preventScroll(document.querySelector('.outer'))
+
+    // 取消锁定
+    document.querySelector('.cancel').onclick = function () {
+      cancel && cancel()
+      cancel = null
+    }
+  </script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>haloUtils</title>
+    <style>
+      body {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      h2 {
+        text-align: center;
+      }
+      .content {
+        border-radius: 3px;
+        padding: 10px;
+        min-height: 200px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>haloUtils</h2>
+    <ul class="content"></ul>
+  </body>
+  <script>
+    function createLi() {
+      const str = Object.keys(window["haloUtils"])
+        .map(item => {
+          return '<li><a href="' + item + '.html">' + item + "</a></li>";
+        })
+        .join("\n");
+      document.querySelector(".content").innerHTML = str;
+    }
+
+    createLi();
+  </script>
+</html>

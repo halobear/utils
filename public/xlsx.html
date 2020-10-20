@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>haloXlsx</title>
+  <style>
+    body {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .content {
+      border-radius: 3px;
+      padding: 10px;
+      min-height: 200px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>haloXlsx</h2>
+  <div class="res">
+    <p>
+      <button onclick="test()">导出excel</button>
+    </p>
+  </div>
+</body>
+<script src="./xlsx.min.js"></script>
+<script>
+  const xlsx = window["haloXlsx"];
+
+  console.log(xlsx)
+
+  const data = {
+    name: "test",
+    header: { a: "头部一", b: "头部二" },
+    data: [
+      { a: '1', b: '2' },
+      { a: "哈哈哈哈哈", b: "1" },
+      { a: "哈哈哈哈哈", b: "哈哈哈哈" },
+    ]
+  };
+
+  function test() {
+    xlsx.JSONToExcel(data);
+  }
+</script>
+</html>

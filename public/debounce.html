@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>haloDebounce</title>
+    <style>
+      body {
+        max-width: 600px;
+        margin: 0 auto;
+        height: 300vh;
+      }
+      h2 {
+        text-align: center;
+      }
+      .content {
+        border-radius: 3px;
+        padding: 10px;
+        min-height: 200px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>haloDebounce</h2>
+    <div class="res">
+      <span>滚动事件:</span>
+      <span class="text">1</span>
+    </div>
+  </body>
+  <script>
+    const debounce = window["haloDebounce"];
+
+    let i = 1;
+
+    window.addEventListener("scroll", () => debounce(test, 300));
+
+    function test() {
+      console.log(1234);
+      i += 1;
+      document.querySelector(".text").innerHTML = i;
+    }
+  </script>
+</html>

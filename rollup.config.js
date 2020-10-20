@@ -30,28 +30,41 @@ const entry = (function getEntry() {
 })()
 
 function getLibName(key) {
-  if (key === 'index') return 'halobearUtils'
-  return key.substring(0, 1).toUpperCase() + key.substring(1)
+  if (key === 'index') return 'haloUtils'
+  return `halo${key.substring(0, 1).toUpperCase()}${key.substring(1)}`
+}
+
+function getOutPut(key) {
+  return isDev
+    ? [
+        {
+          file: `public/${key}.min.js`,
+          format: 'iife',
+          name: getLibName(key),
+        },
+      ]
+    : [
+        {
+          file: `lib/${key}.js`,
+          format: 'cjs',
+          exports: 'auto',
+        },
+        {
+          file: `lib/${key}.min.js`,
+          format: 'iife',
+          name: getLibName(key),
+        },
+        {
+          file: `lib/${key}.esm.js`,
+          format: 'esm',
+        },
+      ]
 }
 
 function getItemConfig(key, input) {
   const config = {
     input,
-    output: [
-      {
-        file: `lib/${key}.js`,
-        format: 'es',
-      },
-      {
-        file: `lib/${key}.min.js`,
-        format: 'iife',
-        name: getLibName(key),
-      },
-      {
-        file: `lib/${key}.esm.js`,
-        format: 'esm',
-      },
-    ],
+    output: getOutPut(key),
     plugins: [
       resolve({ browser: true }),
       commonjs({ exclude: 'node_modules' }),

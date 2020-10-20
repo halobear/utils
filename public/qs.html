@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>hhaloQs</title>
+    <style>
+      body {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      h2 {
+        text-align: center;
+      }
+      .content {
+        border-radius: 3px;
+        padding: 10px;
+        min-height: 200px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>hhaloQs</h2>
+    <div class="res">
+      <p>
+        get, parse, stringify
+      </p>
+    </div>
+  </body>
+  <script>
+    const qs = window["hhaloQs"];
+    console.log("parse", qs.parse());
+    console.log("get", qs.get("name"));
+    console.log("stringify", qs.stringify({ name: "1234", bbb: 2222 }));
+
+    function test() {}
+  </script>
+</html>
