@@ -14,6 +14,6 @@ export default (size: number = 750) => {
   window.addEventListener(
     "orientationchange" in window ? "orientationchange" : "resize",
     adjust,
-    false
+    true
   );
 };
