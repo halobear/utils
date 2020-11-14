@@ -3,7 +3,6 @@ import * as color from './color'
 import cookie from './cookie'
 import copy from './copy'
 import dayjs from './dayjs'
-import debounce from './debounce'
 import deepClone from './deepClone'
 import * as download from './download'
 import Drag from './Drag'
@@ -20,7 +19,6 @@ import rem from './rem'
 import smoothScroll from './smoothScroll'
 import * as selectRange from './selectRange'
 import speaker from './speaker'
-import throttle from './throttle'
 import * as uploader from './uploader'
 import * as validate from './validate'
 import wxShare from './wxShare'
@@ -34,7 +32,6 @@ export {
   cookie,
   copy,
   dayjs,
-  debounce,
   deepClone,
   download,
   Drag,
@@ -51,7 +48,6 @@ export {
   smoothScroll,
   selectRange,
   speaker,
-  throttle,
   uploader,
   validate,
   wxShare,

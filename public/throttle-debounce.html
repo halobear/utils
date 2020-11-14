@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>haloThrottle</title>
+    <title>haloThrottleDebounce</title>
     <style>
       body {
         max-width: 600px;
@@ -22,22 +22,24 @@
     </style>
   </head>
   <body>
-    <h2>haloThrottle</h2>
+    <h2>haloThrottleDebounce</h2>
     <div class="res">
       <p>
-        <button onclick="test()" class="set-btn">切换全屏</button>
+        <button class="set-btn1">throttle</button>
+        <button class="set-btn2">debounce</button>
       </p>
     </div>
   </body>
+  <script src="./throttle-debounce.min.js"></script>
   <script>
-    const throttle = window["haloThrottle"];
+    const {throttle, debounce} = window["haloThrottleDebounce"];
 
-    setInterval(
-      () =>
-        throttle(() => {
-          console.log(1234);
-        }, 1000),
-      10
-    );
+    document.querySelector('.set-btn1').onclick = throttle((e) => {
+      console.log('throttle', e);
+    }, 800)
+
+    document.querySelector('.set-btn2').onclick = debounce((e) => {
+      console.log('debounce', e);
+    }, 300)
   </script>
 </html>

@@ -31,7 +31,11 @@ const entry = (function getEntry() {
 
 function getLibName(key) {
   if (key === 'index') return 'haloUtils'
-  return `halo${key.substring(0, 1).toUpperCase()}${key.substring(1)}`
+  return `halo${key.substring(0, 1).toUpperCase()}${key
+    .substring(1)
+    .replace(/-(\w)/g, function ($, $1) {
+      return $1.toUpperCase()
+    })}`
 }
 
 function getOutPut(key) {

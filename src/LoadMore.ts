@@ -1,4 +1,4 @@
-import throttle from './throttle'
+import {throttle} from './throttle-debounce'
 
 export default class LoadMore {
   loadMoreFn: (() => void) | null
@@ -11,12 +11,12 @@ export default class LoadMore {
       const scrollTop = ele.scrollTop || bo.scrollTop
       const scrollHeight = bo.scrollHeight || ele.scrollHeight
       if (scrollTop + clientHeight >= scrollHeight - 80) {
-        throttle(toLoadMore)
+        toLoadMore()
       }
     }
 
     // 绑定事件
-    window.addEventListener('scroll', this.loadMoreFn)
+    window.addEventListener('scroll', throttle(this.loadMoreFn))
   }
 
   // 取消监听
