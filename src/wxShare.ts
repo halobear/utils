@@ -37,7 +37,7 @@ function loadWechatJSSDK() {
       return
     }
     const script = document.createElement('script')
-    script.src = '//res.wx.qq.com/open/js/jweixin-1.4.0.js '
+    script.src = '//res.wx.qq.com/open/js/jweixin-1.4.0.js'
     document.head.appendChild(script)
     script.onerror = reject
     script.onload = () => {
