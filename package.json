@@ -7,8 +7,8 @@
   "private": true,
   "scripts": {
     "dev": "rimraf lib && NODE_ENV=development rollup --config --watch",
-    "build": "rimraf lib && NODE_ENV=production rollup --config",
-    "publish:npm": "node scripts/prepublish.js && cd lib && npm publish --access public && cd -",
+    "build": "rimraf lib && NODE_ENV=production rollup --config && node scripts/prepublish.js",
+    "publish:npm": "cd lib && npm publish --access public && cd -",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
