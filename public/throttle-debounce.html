@@ -32,14 +32,14 @@
   </body>
   <script src="./throttle-debounce.min.js"></script>
   <script>
-    const {throttle, debounce} = window["haloThrottleDebounce"];
+    const { throttle, debounce } = window['haloThrottleDebounce']
 
-    document.querySelector('.set-btn1').onclick = throttle((e) => {
-      console.log('throttle', e);
+    document.querySelector('.set-btn1').onclick = throttle(function (e) {
+      console.log('throttle', this, e)
     }, 800)
 
     document.querySelector('.set-btn2').onclick = debounce((e) => {
-      console.log('debounce', e);
+      console.log('debounce', e)
     }, 300)
   </script>
 </html>
