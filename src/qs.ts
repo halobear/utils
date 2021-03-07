@@ -20,15 +20,10 @@ function get(name: string, search: string = window.location.href.split('?')[1]) 
  * @param  {String} search  default: window.location.href
  * @return {Object}
  */
-function parse(search = window.location.href.split('?')[1]) {
-  if (!search) return {}
-  return decodeURIComponent(search)
-    .split('&')
-    .reduce((obj: Obj, item) => {
-      const [key = '', value = ''] = item.split('=')
-      obj[key] = value
-      return obj
-    }, {})
+function parse(url = window.location.search) {
+  const params: Record<string, string> = {}
+  url.replace(/([^?&=]+)=([^?&#]+)/g, (_, k, v) => (params[k] = v))
+  return params
 }
 
 /**
