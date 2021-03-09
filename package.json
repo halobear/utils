@@ -1,6 +1,6 @@
 {
   "name": "@halobear/utils",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "[简陋文档](https://www.kuan1.top/kuan-utils)",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
@@ -34,7 +34,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/halobear/js-monitor.git"
+    "url": "git+https://github.com/halobear/utils.git"
   },
   "keywords": [
     "utils"
@@ -47,5 +47,9 @@
   "homepage": "https://github.com/halobear/utils#readme",
   "gitHooks": {
     "commit-msg": "node scripts/verifyCommit.js"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   }
 }
